@@ -11,15 +11,15 @@
     "absolutePath": "/C/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/utils/math/SafeCast.sol",
     "exportedSymbols": {
       "SafeCast": [
-        3303
+        3432
       ]
     },
-    "id": 3304,
+    "id": 3433,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3293,
+        "id": 3422,
         "literals": [
           "solidity",
           ">=",
@@ -39,9 +39,9 @@
         "contractDependencies": [],
         "contractKind": "library",
         "fullyImplemented": true,
-        "id": 3303,
+        "id": 3432,
         "linearizedBaseContracts": [
-          3303
+          3432
         ],
         "name": "SafeCast",
         "nameLocation": "76:8:21",
@@ -49,7 +49,7 @@
         "nodes": [
           {
             "body": {
-              "id": 3301,
+              "id": 3430,
               "nodeType": "Block",
               "src": "150:91:21",
               "statements": [
@@ -101,14 +101,14 @@
                   "evmVersion": "shanghai",
                   "externalReferences": [
                     {
-                      "declaration": 3295,
+                      "declaration": 3424,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "220:1:21",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 3298,
+                      "declaration": 3427,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "201:1:21",
@@ -118,13 +118,13 @@
                   "flags": [
                     "memory-safe"
                   ],
-                  "id": 3300,
+                  "id": 3429,
                   "nodeType": "InlineAssembly",
                   "src": "161:73:21"
                 }
               ]
             },
-            "id": 3302,
+            "id": 3431,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -132,17 +132,17 @@
             "nameLocation": "101:6:21",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3296,
+              "id": 3425,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3295,
+                  "id": 3424,
                   "mutability": "mutable",
                   "name": "b",
                   "nameLocation": "113:1:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3302,
+                  "scope": 3431,
                   "src": "108:6:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -151,7 +151,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 3294,
+                    "id": 3423,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "108:4:21",
@@ -166,17 +166,17 @@
               "src": "107:8:21"
             },
             "returnParameters": {
-              "id": 3299,
+              "id": 3428,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3298,
+                  "id": 3427,
                   "mutability": "mutable",
                   "name": "u",
                   "nameLocation": "147:1:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3302,
+                  "scope": 3431,
                   "src": "139:9:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -185,7 +185,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3297,
+                    "id": 3426,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "139:7:21",
@@ -199,14 +199,14 @@
               ],
               "src": "138:11:21"
             },
-            "scope": 3303,
+            "scope": 3432,
             "src": "92:149:21",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 3304,
+        "scope": 3433,
         "src": "68:176:21",
         "usedErrors": [],
         "usedEvents": []
@@ -218,15 +218,15 @@
     "absolutePath": "/C/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/utils/math/SafeCast.sol",
     "exportedSymbols": {
       "SafeCast": [
-        3303
+        3432
       ]
     },
-    "id": 3304,
+    "id": 3433,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3293,
+        "id": 3422,
         "literals": [
           "solidity",
           ">=",
@@ -246,9 +246,9 @@
         "contractDependencies": [],
         "contractKind": "library",
         "fullyImplemented": true,
-        "id": 3303,
+        "id": 3432,
         "linearizedBaseContracts": [
-          3303
+          3432
         ],
         "name": "SafeCast",
         "nameLocation": "76:8:21",
@@ -256,7 +256,7 @@
         "nodes": [
           {
             "body": {
-              "id": 3301,
+              "id": 3430,
               "nodeType": "Block",
               "src": "150:91:21",
               "statements": [
@@ -308,14 +308,14 @@
                   "evmVersion": "shanghai",
                   "externalReferences": [
                     {
-                      "declaration": 3295,
+                      "declaration": 3424,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "220:1:21",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 3298,
+                      "declaration": 3427,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "201:1:21",
@@ -325,13 +325,13 @@
                   "flags": [
                     "memory-safe"
                   ],
-                  "id": 3300,
+                  "id": 3429,
                   "nodeType": "InlineAssembly",
                   "src": "161:73:21"
                 }
               ]
             },
-            "id": 3302,
+            "id": 3431,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -339,17 +339,17 @@
             "nameLocation": "101:6:21",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3296,
+              "id": 3425,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3295,
+                  "id": 3424,
                   "mutability": "mutable",
                   "name": "b",
                   "nameLocation": "113:1:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3302,
+                  "scope": 3431,
                   "src": "108:6:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -358,7 +358,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 3294,
+                    "id": 3423,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "108:4:21",
@@ -373,17 +373,17 @@
               "src": "107:8:21"
             },
             "returnParameters": {
-              "id": 3299,
+              "id": 3428,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3298,
+                  "id": 3427,
                   "mutability": "mutable",
                   "name": "u",
                   "nameLocation": "147:1:21",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3302,
+                  "scope": 3431,
                   "src": "139:9:21",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -392,7 +392,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3297,
+                    "id": 3426,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "139:7:21",
@@ -406,14 +406,14 @@
               ],
               "src": "138:11:21"
             },
-            "scope": 3303,
+            "scope": 3432,
             "src": "92:149:21",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 3304,
+        "scope": 3433,
         "src": "68:176:21",
         "usedErrors": [],
         "usedEvents": []
@@ -427,5 +427,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2024-10-06T20:05:56.391Z"
+  "updatedAt": "2024-10-07T22:16:00.388Z"
 }

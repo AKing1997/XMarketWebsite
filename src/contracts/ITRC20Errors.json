@@ -98,15 +98,15 @@
     "absolutePath": "/C/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/trc20/ITRC20Errors.sol",
     "exportedSymbols": {
       "ITRC20Errors": [
-        745
+        874
       ]
     },
-    "id": 746,
+    "id": 875,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 712,
+        "id": 841,
         "literals": [
           "solidity",
           ">=",
@@ -126,9 +126,9 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": true,
-        "id": 745,
+        "id": 874,
         "linearizedBaseContracts": [
-          745
+          874
         ],
         "name": "ITRC20Errors",
         "nameLocation": "78:12:6",
@@ -136,22 +136,22 @@
         "nodes": [
           {
             "errorSelector": "d79d5967",
-            "id": 720,
+            "id": 849,
             "name": "TRC20InsufficientBalance",
             "nameLocation": "104:24:6",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 719,
+              "id": 848,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 714,
+                  "id": 843,
                   "mutability": "mutable",
                   "name": "sender",
                   "nameLocation": "137:6:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 720,
+                  "scope": 849,
                   "src": "129:14:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -160,7 +160,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 713,
+                    "id": 842,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "129:7:6",
@@ -174,12 +174,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 716,
+                  "id": 845,
                   "mutability": "mutable",
                   "name": "balance",
                   "nameLocation": "153:7:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 720,
+                  "scope": 849,
                   "src": "145:15:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -188,7 +188,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 715,
+                    "id": 844,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "145:7:6",
@@ -201,12 +201,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 718,
+                  "id": 847,
                   "mutability": "mutable",
                   "name": "needed",
                   "nameLocation": "170:6:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 720,
+                  "scope": 849,
                   "src": "162:14:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -215,7 +215,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 717,
+                    "id": 846,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "162:7:6",
@@ -233,22 +233,22 @@
           },
           {
             "errorSelector": "88b25e3e",
-            "id": 724,
+            "id": 853,
             "name": "TRC20InvalidSender",
             "nameLocation": "190:18:6",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 723,
+              "id": 852,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 722,
+                  "id": 851,
                   "mutability": "mutable",
                   "name": "sender",
                   "nameLocation": "217:6:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 724,
+                  "scope": 853,
                   "src": "209:14:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -257,7 +257,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 721,
+                    "id": 850,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "209:7:6",
@@ -276,22 +276,22 @@
           },
           {
             "errorSelector": "8702316d",
-            "id": 728,
+            "id": 857,
             "name": "TRC20InvalidReceiver",
             "nameLocation": "237:20:6",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 727,
+              "id": 856,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 726,
+                  "id": 855,
                   "mutability": "mutable",
                   "name": "receiver",
                   "nameLocation": "266:8:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 728,
+                  "scope": 857,
                   "src": "258:16:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -300,7 +300,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 725,
+                    "id": 854,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "258:7:6",
@@ -319,22 +319,22 @@
           },
           {
             "errorSelector": "808463d1",
-            "id": 736,
+            "id": 865,
             "name": "TRC20InsufficientAllowance",
             "nameLocation": "288:26:6",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 735,
+              "id": 864,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 730,
+                  "id": 859,
                   "mutability": "mutable",
                   "name": "spender",
                   "nameLocation": "323:7:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 736,
+                  "scope": 865,
                   "src": "315:15:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -343,7 +343,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 729,
+                    "id": 858,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "315:7:6",
@@ -357,12 +357,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 732,
+                  "id": 861,
                   "mutability": "mutable",
                   "name": "allowance",
                   "nameLocation": "340:9:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 736,
+                  "scope": 865,
                   "src": "332:17:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -371,7 +371,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 731,
+                    "id": 860,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "332:7:6",
@@ -384,12 +384,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 734,
+                  "id": 863,
                   "mutability": "mutable",
                   "name": "needed",
                   "nameLocation": "359:6:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 736,
+                  "scope": 865,
                   "src": "351:14:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -398,7 +398,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 733,
+                    "id": 862,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "351:7:6",
@@ -416,22 +416,22 @@
           },
           {
             "errorSelector": "1e431edf",
-            "id": 740,
+            "id": 869,
             "name": "TRC20InvalidApprover",
             "nameLocation": "379:20:6",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 739,
+              "id": 868,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 738,
+                  "id": 867,
                   "mutability": "mutable",
                   "name": "approver",
                   "nameLocation": "408:8:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 740,
+                  "scope": 869,
                   "src": "400:16:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -440,7 +440,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 737,
+                    "id": 866,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "400:7:6",
@@ -459,22 +459,22 @@
           },
           {
             "errorSelector": "503ab6af",
-            "id": 744,
+            "id": 873,
             "name": "TRC20InvalidSpender",
             "nameLocation": "430:19:6",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 743,
+              "id": 872,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 742,
+                  "id": 871,
                   "mutability": "mutable",
                   "name": "spender",
                   "nameLocation": "458:7:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 744,
+                  "scope": 873,
                   "src": "450:15:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -483,7 +483,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 741,
+                    "id": 870,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "450:7:6",
@@ -501,15 +501,15 @@
             "src": "424:43:6"
           }
         ],
-        "scope": 746,
+        "scope": 875,
         "src": "68:402:6",
         "usedErrors": [
-          720,
-          724,
-          728,
-          736,
-          740,
-          744
+          849,
+          853,
+          857,
+          865,
+          869,
+          873
         ],
         "usedEvents": []
       }
@@ -520,15 +520,15 @@
     "absolutePath": "/C/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/trc20/ITRC20Errors.sol",
     "exportedSymbols": {
       "ITRC20Errors": [
-        745
+        874
       ]
     },
-    "id": 746,
+    "id": 875,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 712,
+        "id": 841,
         "literals": [
           "solidity",
           ">=",
@@ -548,9 +548,9 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": true,
-        "id": 745,
+        "id": 874,
         "linearizedBaseContracts": [
-          745
+          874
         ],
         "name": "ITRC20Errors",
         "nameLocation": "78:12:6",
@@ -558,22 +558,22 @@
         "nodes": [
           {
             "errorSelector": "d79d5967",
-            "id": 720,
+            "id": 849,
             "name": "TRC20InsufficientBalance",
             "nameLocation": "104:24:6",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 719,
+              "id": 848,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 714,
+                  "id": 843,
                   "mutability": "mutable",
                   "name": "sender",
                   "nameLocation": "137:6:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 720,
+                  "scope": 849,
                   "src": "129:14:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -582,7 +582,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 713,
+                    "id": 842,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "129:7:6",
@@ -596,12 +596,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 716,
+                  "id": 845,
                   "mutability": "mutable",
                   "name": "balance",
                   "nameLocation": "153:7:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 720,
+                  "scope": 849,
                   "src": "145:15:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -610,7 +610,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 715,
+                    "id": 844,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "145:7:6",
@@ -623,12 +623,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 718,
+                  "id": 847,
                   "mutability": "mutable",
                   "name": "needed",
                   "nameLocation": "170:6:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 720,
+                  "scope": 849,
                   "src": "162:14:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -637,7 +637,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 717,
+                    "id": 846,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "162:7:6",
@@ -655,22 +655,22 @@
           },
           {
             "errorSelector": "88b25e3e",
-            "id": 724,
+            "id": 853,
             "name": "TRC20InvalidSender",
             "nameLocation": "190:18:6",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 723,
+              "id": 852,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 722,
+                  "id": 851,
                   "mutability": "mutable",
                   "name": "sender",
                   "nameLocation": "217:6:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 724,
+                  "scope": 853,
                   "src": "209:14:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -679,7 +679,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 721,
+                    "id": 850,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "209:7:6",
@@ -698,22 +698,22 @@
           },
           {
             "errorSelector": "8702316d",
-            "id": 728,
+            "id": 857,
             "name": "TRC20InvalidReceiver",
             "nameLocation": "237:20:6",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 727,
+              "id": 856,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 726,
+                  "id": 855,
                   "mutability": "mutable",
                   "name": "receiver",
                   "nameLocation": "266:8:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 728,
+                  "scope": 857,
                   "src": "258:16:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -722,7 +722,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 725,
+                    "id": 854,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "258:7:6",
@@ -741,22 +741,22 @@
           },
           {
             "errorSelector": "808463d1",
-            "id": 736,
+            "id": 865,
             "name": "TRC20InsufficientAllowance",
             "nameLocation": "288:26:6",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 735,
+              "id": 864,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 730,
+                  "id": 859,
                   "mutability": "mutable",
                   "name": "spender",
                   "nameLocation": "323:7:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 736,
+                  "scope": 865,
                   "src": "315:15:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -765,7 +765,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 729,
+                    "id": 858,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "315:7:6",
@@ -779,12 +779,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 732,
+                  "id": 861,
                   "mutability": "mutable",
                   "name": "allowance",
                   "nameLocation": "340:9:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 736,
+                  "scope": 865,
                   "src": "332:17:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -793,7 +793,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 731,
+                    "id": 860,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "332:7:6",
@@ -806,12 +806,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 734,
+                  "id": 863,
                   "mutability": "mutable",
                   "name": "needed",
                   "nameLocation": "359:6:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 736,
+                  "scope": 865,
                   "src": "351:14:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -820,7 +820,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 733,
+                    "id": 862,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "351:7:6",
@@ -838,22 +838,22 @@
           },
           {
             "errorSelector": "1e431edf",
-            "id": 740,
+            "id": 869,
             "name": "TRC20InvalidApprover",
             "nameLocation": "379:20:6",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 739,
+              "id": 868,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 738,
+                  "id": 867,
                   "mutability": "mutable",
                   "name": "approver",
                   "nameLocation": "408:8:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 740,
+                  "scope": 869,
                   "src": "400:16:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -862,7 +862,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 737,
+                    "id": 866,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "400:7:6",
@@ -881,22 +881,22 @@
           },
           {
             "errorSelector": "503ab6af",
-            "id": 744,
+            "id": 873,
             "name": "TRC20InvalidSpender",
             "nameLocation": "430:19:6",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 743,
+              "id": 872,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 742,
+                  "id": 871,
                   "mutability": "mutable",
                   "name": "spender",
                   "nameLocation": "458:7:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 744,
+                  "scope": 873,
                   "src": "450:15:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -905,7 +905,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 741,
+                    "id": 870,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "450:7:6",
@@ -923,15 +923,15 @@
             "src": "424:43:6"
           }
         ],
-        "scope": 746,
+        "scope": 875,
         "src": "68:402:6",
         "usedErrors": [
-          720,
-          724,
-          728,
-          736,
-          740,
-          744
+          849,
+          853,
+          857,
+          865,
+          869,
+          873
         ],
         "usedEvents": []
       }
@@ -944,5 +944,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2024-10-06T20:05:56.373Z"
+  "updatedAt": "2024-10-07T22:16:00.373Z"
 }
