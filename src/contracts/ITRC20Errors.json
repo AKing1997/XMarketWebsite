@@ -1,0 +1,948 @@
+{
+  "contractName": "ITRC20Errors",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "allowance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "needed",
+          "type": "uint256"
+        }
+      ],
+      "name": "TRC20InsufficientAllowance",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "balance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "needed",
+          "type": "uint256"
+        }
+      ],
+      "name": "TRC20InsufficientBalance",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "approver",
+          "type": "address"
+        }
+      ],
+      "name": "TRC20InvalidApprover",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "name": "TRC20InvalidReceiver",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "TRC20InvalidSender",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "TRC20InvalidSpender",
+      "type": "error"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.8.18 <0.8.28;\r\ninterface ITRC20Errors {\r\n    error TRC20InsufficientBalance(address sender, uint256 balance, uint256 needed);\r\n    error TRC20InvalidSender(address sender);\r\n    error TRC20InvalidReceiver(address receiver);\r\n    error TRC20InsufficientAllowance(address spender, uint256 allowance, uint256 needed);\r\n    error TRC20InvalidApprover(address approver);\r\n    error TRC20InvalidSpender(address spender);\r\n}",
+  "sourcePath": "C:/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/trc20/ITRC20Errors.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/trc20/ITRC20Errors.sol",
+    "exportedSymbols": {
+      "ITRC20Errors": [
+        745
+      ]
+    },
+    "id": 746,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 712,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".18",
+          "<",
+          "0.8",
+          ".28"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:33:6"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ITRC20Errors",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "id": 745,
+        "linearizedBaseContracts": [
+          745
+        ],
+        "name": "ITRC20Errors",
+        "nameLocation": "78:12:6",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "errorSelector": "d79d5967",
+            "id": 720,
+            "name": "TRC20InsufficientBalance",
+            "nameLocation": "104:24:6",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 719,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 714,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "137:6:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 720,
+                  "src": "129:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 713,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "129:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 716,
+                  "mutability": "mutable",
+                  "name": "balance",
+                  "nameLocation": "153:7:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 720,
+                  "src": "145:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 715,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "145:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 718,
+                  "mutability": "mutable",
+                  "name": "needed",
+                  "nameLocation": "170:6:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 720,
+                  "src": "162:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 717,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "162:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "128:49:6"
+            },
+            "src": "98:80:6"
+          },
+          {
+            "errorSelector": "88b25e3e",
+            "id": 724,
+            "name": "TRC20InvalidSender",
+            "nameLocation": "190:18:6",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 723,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 722,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "217:6:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 724,
+                  "src": "209:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 721,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "209:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "208:16:6"
+            },
+            "src": "184:41:6"
+          },
+          {
+            "errorSelector": "8702316d",
+            "id": 728,
+            "name": "TRC20InvalidReceiver",
+            "nameLocation": "237:20:6",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 727,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 726,
+                  "mutability": "mutable",
+                  "name": "receiver",
+                  "nameLocation": "266:8:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 728,
+                  "src": "258:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 725,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "258:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "257:18:6"
+            },
+            "src": "231:45:6"
+          },
+          {
+            "errorSelector": "808463d1",
+            "id": 736,
+            "name": "TRC20InsufficientAllowance",
+            "nameLocation": "288:26:6",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 735,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 730,
+                  "mutability": "mutable",
+                  "name": "spender",
+                  "nameLocation": "323:7:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 736,
+                  "src": "315:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 729,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "315:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 732,
+                  "mutability": "mutable",
+                  "name": "allowance",
+                  "nameLocation": "340:9:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 736,
+                  "src": "332:17:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 731,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "332:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 734,
+                  "mutability": "mutable",
+                  "name": "needed",
+                  "nameLocation": "359:6:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 736,
+                  "src": "351:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 733,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "351:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "314:52:6"
+            },
+            "src": "282:85:6"
+          },
+          {
+            "errorSelector": "1e431edf",
+            "id": 740,
+            "name": "TRC20InvalidApprover",
+            "nameLocation": "379:20:6",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 739,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 738,
+                  "mutability": "mutable",
+                  "name": "approver",
+                  "nameLocation": "408:8:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 740,
+                  "src": "400:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 737,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "400:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "399:18:6"
+            },
+            "src": "373:45:6"
+          },
+          {
+            "errorSelector": "503ab6af",
+            "id": 744,
+            "name": "TRC20InvalidSpender",
+            "nameLocation": "430:19:6",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 743,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 742,
+                  "mutability": "mutable",
+                  "name": "spender",
+                  "nameLocation": "458:7:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 744,
+                  "src": "450:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 741,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "450:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "449:17:6"
+            },
+            "src": "424:43:6"
+          }
+        ],
+        "scope": 746,
+        "src": "68:402:6",
+        "usedErrors": [
+          720,
+          724,
+          728,
+          736,
+          740,
+          744
+        ],
+        "usedEvents": []
+      }
+    ],
+    "src": "33:437:6"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/trc20/ITRC20Errors.sol",
+    "exportedSymbols": {
+      "ITRC20Errors": [
+        745
+      ]
+    },
+    "id": 746,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 712,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".18",
+          "<",
+          "0.8",
+          ".28"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:33:6"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ITRC20Errors",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "id": 745,
+        "linearizedBaseContracts": [
+          745
+        ],
+        "name": "ITRC20Errors",
+        "nameLocation": "78:12:6",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "errorSelector": "d79d5967",
+            "id": 720,
+            "name": "TRC20InsufficientBalance",
+            "nameLocation": "104:24:6",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 719,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 714,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "137:6:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 720,
+                  "src": "129:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 713,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "129:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 716,
+                  "mutability": "mutable",
+                  "name": "balance",
+                  "nameLocation": "153:7:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 720,
+                  "src": "145:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 715,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "145:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 718,
+                  "mutability": "mutable",
+                  "name": "needed",
+                  "nameLocation": "170:6:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 720,
+                  "src": "162:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 717,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "162:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "128:49:6"
+            },
+            "src": "98:80:6"
+          },
+          {
+            "errorSelector": "88b25e3e",
+            "id": 724,
+            "name": "TRC20InvalidSender",
+            "nameLocation": "190:18:6",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 723,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 722,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "217:6:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 724,
+                  "src": "209:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 721,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "209:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "208:16:6"
+            },
+            "src": "184:41:6"
+          },
+          {
+            "errorSelector": "8702316d",
+            "id": 728,
+            "name": "TRC20InvalidReceiver",
+            "nameLocation": "237:20:6",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 727,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 726,
+                  "mutability": "mutable",
+                  "name": "receiver",
+                  "nameLocation": "266:8:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 728,
+                  "src": "258:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 725,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "258:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "257:18:6"
+            },
+            "src": "231:45:6"
+          },
+          {
+            "errorSelector": "808463d1",
+            "id": 736,
+            "name": "TRC20InsufficientAllowance",
+            "nameLocation": "288:26:6",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 735,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 730,
+                  "mutability": "mutable",
+                  "name": "spender",
+                  "nameLocation": "323:7:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 736,
+                  "src": "315:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 729,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "315:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 732,
+                  "mutability": "mutable",
+                  "name": "allowance",
+                  "nameLocation": "340:9:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 736,
+                  "src": "332:17:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 731,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "332:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 734,
+                  "mutability": "mutable",
+                  "name": "needed",
+                  "nameLocation": "359:6:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 736,
+                  "src": "351:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 733,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "351:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "314:52:6"
+            },
+            "src": "282:85:6"
+          },
+          {
+            "errorSelector": "1e431edf",
+            "id": 740,
+            "name": "TRC20InvalidApprover",
+            "nameLocation": "379:20:6",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 739,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 738,
+                  "mutability": "mutable",
+                  "name": "approver",
+                  "nameLocation": "408:8:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 740,
+                  "src": "400:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 737,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "400:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "399:18:6"
+            },
+            "src": "373:45:6"
+          },
+          {
+            "errorSelector": "503ab6af",
+            "id": 744,
+            "name": "TRC20InvalidSpender",
+            "nameLocation": "430:19:6",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 743,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 742,
+                  "mutability": "mutable",
+                  "name": "spender",
+                  "nameLocation": "458:7:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 744,
+                  "src": "450:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 741,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "450:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "449:17:6"
+            },
+            "src": "424:43:6"
+          }
+        ],
+        "scope": 746,
+        "src": "68:402:6",
+        "usedErrors": [
+          720,
+          724,
+          728,
+          736,
+          740,
+          744
+        ],
+        "usedEvents": []
+      }
+    ],
+    "src": "33:437:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.20+commit.a1b79de6.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2024-10-06T20:05:56.373Z"
+}

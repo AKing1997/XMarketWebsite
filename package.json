@@ -5,10 +5,12 @@
     "dependencies": {
         "@emotion/react": "^11.11.0",
         "@emotion/styled": "^11.11.0",
-        "@mui/material": "^5.10.10",
+        "@mui/icons-material": "^6.1.2",
+        "@mui/material": "^6.1.2",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
+        "@toolpad/core": "^0.7.0",
         "@tronweb3/tronwallet-abstract-adapter": "^1.1.0",
         "@tronweb3/tronwallet-adapter-ledger": "^1.1.1",
         "@tronweb3/tronwallet-adapter-react-hooks": "^1.0.0",
@@ -30,6 +32,7 @@
         "react-app-rewired": "2.2.1",
         "react-dom": "^18.2.0",
         "react-hot-toast": "^2.4.0",
+        "react-router-dom": "^6.26.2",
         "react-scripts": "5.0.1",
         "stream-browserify": "^3.0.0",
         "stream-http": "^3.2.0",
@@ -39,13 +42,13 @@
         "vconsole": "^3.15.0",
         "web-vitals": "^2.1.4"
     },
-   "scripts": {
-    "dev": "npm start",
-    "start": "set GENERATE_SOURCEMAP=false&& set PORT=5001 && react-app-rewired start",
-    "build": "set GENERATE_SOURCEMAP=false&& react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
-},
+    "scripts": {
+        "dev": "npm start",
+        "start": "set GENERATE_SOURCEMAP=false && set PORT=5001 && react-app-rewired start",
+        "build": "set GENERATE_SOURCEMAP=false && react-app-rewired build",
+        "test": "react-app-rewired test",
+        "eject": "react-scripts eject"
+    },
     "eslintConfig": {
         "extends": [
             "react-app",

@@ -1,0 +1,611 @@
+{
+  "contractName": "TRC165",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceId",
+          "type": "bytes4"
+        }
+      ],
+      "name": "supportsInterface",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.8.18 <0.8.28;\r\nimport {ITRC165} from \"./ITRC165.sol\";\r\nabstract contract TRC165 is ITRC165 {\r\n    function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) {\r\n        return interfaceId == type(ITRC165).interfaceId;\r\n    }\r\n}",
+  "sourcePath": "C:/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/utils/introspection/TRC165.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/utils/introspection/TRC165.sol",
+    "exportedSymbols": {
+      "ITRC165": [
+        3000
+      ],
+      "TRC165": [
+        3022
+      ]
+    },
+    "id": 3023,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3002,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".18",
+          "<",
+          "0.8",
+          ".28"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:33:19"
+      },
+      {
+        "absolutePath": "/C/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/utils/introspection/ITRC165.sol",
+        "file": "./ITRC165.sol",
+        "id": 3004,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 3023,
+        "sourceUnit": 3001,
+        "src": "68:38:19",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 3003,
+              "name": "ITRC165",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 3000,
+              "src": "76:7:19",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 3005,
+              "name": "ITRC165",
+              "nameLocations": [
+                "136:7:19"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 3000,
+              "src": "136:7:19"
+            },
+            "id": 3006,
+            "nodeType": "InheritanceSpecifier",
+            "src": "136:7:19"
+          }
+        ],
+        "canonicalName": "TRC165",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 3022,
+        "linearizedBaseContracts": [
+          3022,
+          3000
+        ],
+        "name": "TRC165",
+        "nameLocation": "126:6:19",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "baseFunctions": [
+              2999
+            ],
+            "body": {
+              "id": 3020,
+              "nodeType": "Block",
+              "src": "233:66:19",
+              "statements": [
+                {
+                  "expression": {
+                    "commonType": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    },
+                    "id": 3018,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 3013,
+                      "name": "interfaceId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3008,
+                      "src": "251:11:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes4",
+                        "typeString": "bytes4"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "expression": {
+                        "arguments": [
+                          {
+                            "id": 3015,
+                            "name": "ITRC165",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3000,
+                            "src": "271:7:19",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_ITRC165_$3000_$",
+                              "typeString": "type(contract ITRC165)"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_type$_t_contract$_ITRC165_$3000_$",
+                              "typeString": "type(contract ITRC165)"
+                            }
+                          ],
+                          "id": 3014,
+                          "name": "type",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967269,
+                          "src": "266:4:19",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_metatype_pure$__$returns$__$",
+                            "typeString": "function () pure"
+                          }
+                        },
+                        "id": 3016,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "266:13:19",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_meta_type_t_contract$_ITRC165_$3000",
+                          "typeString": "type(contract ITRC165)"
+                        }
+                      },
+                      "id": 3017,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberLocation": "280:11:19",
+                      "memberName": "interfaceId",
+                      "nodeType": "MemberAccess",
+                      "src": "266:25:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes4",
+                        "typeString": "bytes4"
+                      }
+                    },
+                    "src": "251:40:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 3012,
+                  "id": 3019,
+                  "nodeType": "Return",
+                  "src": "244:47:19"
+                }
+              ]
+            },
+            "functionSelector": "01ffc9a7",
+            "id": 3021,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "supportsInterface",
+            "nameLocation": "160:17:19",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3009,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3008,
+                  "mutability": "mutable",
+                  "name": "interfaceId",
+                  "nameLocation": "185:11:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3021,
+                  "src": "178:18:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 3007,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "178:6:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "177:20:19"
+            },
+            "returnParameters": {
+              "id": 3012,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3011,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3021,
+                  "src": "227:4:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3010,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "227:4:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "226:6:19"
+            },
+            "scope": 3022,
+            "src": "151:148:19",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "scope": 3023,
+        "src": "108:194:19",
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "src": "33:269:19"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/utils/introspection/TRC165.sol",
+    "exportedSymbols": {
+      "ITRC165": [
+        3000
+      ],
+      "TRC165": [
+        3022
+      ]
+    },
+    "id": 3023,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3002,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".18",
+          "<",
+          "0.8",
+          ".28"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:33:19"
+      },
+      {
+        "absolutePath": "/C/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/utils/introspection/ITRC165.sol",
+        "file": "./ITRC165.sol",
+        "id": 3004,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 3023,
+        "sourceUnit": 3001,
+        "src": "68:38:19",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 3003,
+              "name": "ITRC165",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 3000,
+              "src": "76:7:19",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 3005,
+              "name": "ITRC165",
+              "nameLocations": [
+                "136:7:19"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 3000,
+              "src": "136:7:19"
+            },
+            "id": 3006,
+            "nodeType": "InheritanceSpecifier",
+            "src": "136:7:19"
+          }
+        ],
+        "canonicalName": "TRC165",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 3022,
+        "linearizedBaseContracts": [
+          3022,
+          3000
+        ],
+        "name": "TRC165",
+        "nameLocation": "126:6:19",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "baseFunctions": [
+              2999
+            ],
+            "body": {
+              "id": 3020,
+              "nodeType": "Block",
+              "src": "233:66:19",
+              "statements": [
+                {
+                  "expression": {
+                    "commonType": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    },
+                    "id": 3018,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 3013,
+                      "name": "interfaceId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3008,
+                      "src": "251:11:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes4",
+                        "typeString": "bytes4"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "expression": {
+                        "arguments": [
+                          {
+                            "id": 3015,
+                            "name": "ITRC165",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3000,
+                            "src": "271:7:19",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_ITRC165_$3000_$",
+                              "typeString": "type(contract ITRC165)"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_type$_t_contract$_ITRC165_$3000_$",
+                              "typeString": "type(contract ITRC165)"
+                            }
+                          ],
+                          "id": 3014,
+                          "name": "type",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967269,
+                          "src": "266:4:19",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_metatype_pure$__$returns$__$",
+                            "typeString": "function () pure"
+                          }
+                        },
+                        "id": 3016,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "266:13:19",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_meta_type_t_contract$_ITRC165_$3000",
+                          "typeString": "type(contract ITRC165)"
+                        }
+                      },
+                      "id": 3017,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberLocation": "280:11:19",
+                      "memberName": "interfaceId",
+                      "nodeType": "MemberAccess",
+                      "src": "266:25:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes4",
+                        "typeString": "bytes4"
+                      }
+                    },
+                    "src": "251:40:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 3012,
+                  "id": 3019,
+                  "nodeType": "Return",
+                  "src": "244:47:19"
+                }
+              ]
+            },
+            "functionSelector": "01ffc9a7",
+            "id": 3021,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "supportsInterface",
+            "nameLocation": "160:17:19",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3009,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3008,
+                  "mutability": "mutable",
+                  "name": "interfaceId",
+                  "nameLocation": "185:11:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3021,
+                  "src": "178:18:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 3007,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "178:6:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "177:20:19"
+            },
+            "returnParameters": {
+              "id": 3012,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3011,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3021,
+                  "src": "227:4:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3010,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "227:4:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "226:6:19"
+            },
+            "scope": 3022,
+            "src": "151:148:19",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "scope": 3023,
+        "src": "108:194:19",
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "src": "33:269:19"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.20+commit.a1b79de6.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2024-10-06T20:05:56.391Z"
+}

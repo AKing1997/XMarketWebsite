@@ -1,0 +1,1087 @@
+{
+  "contractName": "ITRC721Errors",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "TRC721IncorrectOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "TRC721InsufficientApproval",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "approver",
+          "type": "address"
+        }
+      ],
+      "name": "TRC721InvalidApprover",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "name": "TRC721InvalidOperator",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "TRC721InvalidOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "name": "TRC721InvalidReceiver",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "TRC721InvalidSender",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "TRC721NonexistentToken",
+      "type": "error"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.8.18 <0.8.28;\r\ninterface ITRC721Errors {\r\n    error TRC721InvalidOwner(address owner);\r\n    error TRC721NonexistentToken(uint256 tokenId);\r\n    error TRC721IncorrectOwner(address sender, uint256 tokenId, address owner);\r\n    error TRC721InvalidSender(address sender);\r\n    error TRC721InvalidReceiver(address receiver);\r\n    error TRC721InsufficientApproval(address operator, uint256 tokenId);\r\n    error TRC721InvalidApprover(address approver);\r\n    error TRC721InvalidOperator(address operator);\r\n}",
+  "sourcePath": "C:/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/trc721/interfaces/ITRC721Errors.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/trc721/interfaces/ITRC721Errors.sol",
+    "exportedSymbols": {
+      "ITRC721Errors": [
+        2444
+      ]
+    },
+    "id": 2445,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2405,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".18",
+          "<",
+          "0.8",
+          ".28"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:33:11"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ITRC721Errors",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "id": 2444,
+        "linearizedBaseContracts": [
+          2444
+        ],
+        "name": "ITRC721Errors",
+        "nameLocation": "78:13:11",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "errorSelector": "1e3e8f41",
+            "id": 2409,
+            "name": "TRC721InvalidOwner",
+            "nameLocation": "105:18:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2408,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2407,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "132:5:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2409,
+                  "src": "124:13:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2406,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "124:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "123:15:11"
+            },
+            "src": "99:40:11"
+          },
+          {
+            "errorSelector": "11b0ad19",
+            "id": 2413,
+            "name": "TRC721NonexistentToken",
+            "nameLocation": "151:22:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2412,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2411,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "182:7:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2413,
+                  "src": "174:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2410,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "174:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "173:17:11"
+            },
+            "src": "145:46:11"
+          },
+          {
+            "errorSelector": "8eab043b",
+            "id": 2421,
+            "name": "TRC721IncorrectOwner",
+            "nameLocation": "203:20:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2420,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2415,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "232:6:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2421,
+                  "src": "224:14:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2414,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "224:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2417,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "248:7:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2421,
+                  "src": "240:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2416,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "240:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2419,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "265:5:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2421,
+                  "src": "257:13:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2418,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "257:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "223:48:11"
+            },
+            "src": "197:75:11"
+          },
+          {
+            "errorSelector": "a365773a",
+            "id": 2425,
+            "name": "TRC721InvalidSender",
+            "nameLocation": "284:19:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2424,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2423,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "312:6:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2425,
+                  "src": "304:14:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2422,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "304:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "303:16:11"
+            },
+            "src": "278:42:11"
+          },
+          {
+            "errorSelector": "3081bfe1",
+            "id": 2429,
+            "name": "TRC721InvalidReceiver",
+            "nameLocation": "332:21:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2428,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2427,
+                  "mutability": "mutable",
+                  "name": "receiver",
+                  "nameLocation": "362:8:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2429,
+                  "src": "354:16:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2426,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "354:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "353:18:11"
+            },
+            "src": "326:46:11"
+          },
+          {
+            "errorSelector": "c4526c95",
+            "id": 2435,
+            "name": "TRC721InsufficientApproval",
+            "nameLocation": "384:26:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2434,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2431,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "419:8:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2435,
+                  "src": "411:16:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2430,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "411:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2433,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "437:7:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2435,
+                  "src": "429:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2432,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "429:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "410:35:11"
+            },
+            "src": "378:68:11"
+          },
+          {
+            "errorSelector": "b7664c49",
+            "id": 2439,
+            "name": "TRC721InvalidApprover",
+            "nameLocation": "458:21:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2438,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2437,
+                  "mutability": "mutable",
+                  "name": "approver",
+                  "nameLocation": "488:8:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2439,
+                  "src": "480:16:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2436,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "480:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "479:18:11"
+            },
+            "src": "452:46:11"
+          },
+          {
+            "errorSelector": "b72ca29b",
+            "id": 2443,
+            "name": "TRC721InvalidOperator",
+            "nameLocation": "510:21:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2442,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2441,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "540:8:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2443,
+                  "src": "532:16:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2440,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "532:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "531:18:11"
+            },
+            "src": "504:46:11"
+          }
+        ],
+        "scope": 2445,
+        "src": "68:485:11",
+        "usedErrors": [
+          2409,
+          2413,
+          2421,
+          2425,
+          2429,
+          2435,
+          2439,
+          2443
+        ],
+        "usedEvents": []
+      }
+    ],
+    "src": "33:520:11"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Ankit Kumar/Desktop/Hack/XTech/contracts/trc721/interfaces/ITRC721Errors.sol",
+    "exportedSymbols": {
+      "ITRC721Errors": [
+        2444
+      ]
+    },
+    "id": 2445,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2405,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".18",
+          "<",
+          "0.8",
+          ".28"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:33:11"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ITRC721Errors",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "id": 2444,
+        "linearizedBaseContracts": [
+          2444
+        ],
+        "name": "ITRC721Errors",
+        "nameLocation": "78:13:11",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "errorSelector": "1e3e8f41",
+            "id": 2409,
+            "name": "TRC721InvalidOwner",
+            "nameLocation": "105:18:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2408,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2407,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "132:5:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2409,
+                  "src": "124:13:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2406,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "124:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "123:15:11"
+            },
+            "src": "99:40:11"
+          },
+          {
+            "errorSelector": "11b0ad19",
+            "id": 2413,
+            "name": "TRC721NonexistentToken",
+            "nameLocation": "151:22:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2412,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2411,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "182:7:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2413,
+                  "src": "174:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2410,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "174:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "173:17:11"
+            },
+            "src": "145:46:11"
+          },
+          {
+            "errorSelector": "8eab043b",
+            "id": 2421,
+            "name": "TRC721IncorrectOwner",
+            "nameLocation": "203:20:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2420,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2415,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "232:6:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2421,
+                  "src": "224:14:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2414,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "224:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2417,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "248:7:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2421,
+                  "src": "240:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2416,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "240:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2419,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "265:5:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2421,
+                  "src": "257:13:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2418,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "257:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "223:48:11"
+            },
+            "src": "197:75:11"
+          },
+          {
+            "errorSelector": "a365773a",
+            "id": 2425,
+            "name": "TRC721InvalidSender",
+            "nameLocation": "284:19:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2424,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2423,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "312:6:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2425,
+                  "src": "304:14:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2422,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "304:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "303:16:11"
+            },
+            "src": "278:42:11"
+          },
+          {
+            "errorSelector": "3081bfe1",
+            "id": 2429,
+            "name": "TRC721InvalidReceiver",
+            "nameLocation": "332:21:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2428,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2427,
+                  "mutability": "mutable",
+                  "name": "receiver",
+                  "nameLocation": "362:8:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2429,
+                  "src": "354:16:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2426,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "354:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "353:18:11"
+            },
+            "src": "326:46:11"
+          },
+          {
+            "errorSelector": "c4526c95",
+            "id": 2435,
+            "name": "TRC721InsufficientApproval",
+            "nameLocation": "384:26:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2434,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2431,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "419:8:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2435,
+                  "src": "411:16:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2430,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "411:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2433,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "437:7:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2435,
+                  "src": "429:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2432,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "429:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "410:35:11"
+            },
+            "src": "378:68:11"
+          },
+          {
+            "errorSelector": "b7664c49",
+            "id": 2439,
+            "name": "TRC721InvalidApprover",
+            "nameLocation": "458:21:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2438,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2437,
+                  "mutability": "mutable",
+                  "name": "approver",
+                  "nameLocation": "488:8:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2439,
+                  "src": "480:16:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2436,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "480:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "479:18:11"
+            },
+            "src": "452:46:11"
+          },
+          {
+            "errorSelector": "b72ca29b",
+            "id": 2443,
+            "name": "TRC721InvalidOperator",
+            "nameLocation": "510:21:11",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 2442,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2441,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "540:8:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2443,
+                  "src": "532:16:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2440,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "532:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "531:18:11"
+            },
+            "src": "504:46:11"
+          }
+        ],
+        "scope": 2445,
+        "src": "68:485:11",
+        "usedErrors": [
+          2409,
+          2413,
+          2421,
+          2425,
+          2429,
+          2435,
+          2439,
+          2443
+        ],
+        "usedEvents": []
+      }
+    ],
+    "src": "33:520:11"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.20+commit.a1b79de6.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2024-10-06T20:05:56.387Z"
+}
