@@ -1,89 +1,204 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Box, Button, Container, Grid, Paper } from '@mui/material';
-import { Link } from "react-router-dom";
-import { WalletActionButton } from '@tronweb3/tronwallet-adapter-react-ui';
-export default function HomePage(){
+import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Container,
+  Grid,
+  Paper,
+  Button,
+  Snackbar,
+  Alert,
+  Avatar,
+} from "@mui/material";
+import { WalletActionButton } from "@tronweb3/tronwallet-adapter-react-ui";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Grid2 from "@mui/material/Grid2";
+export default function HomePage() {
+  const [openSnackbar, setOpenSnackbar] = React.useState(false);
+  const [snackbarMessage, setSnackbarMessage] = React.useState("");
+
+  const handleSnackbarClose = () => {
+    setOpenSnackbar(false);
+  };
+
+  const handleLearnMoreClick = () => {
+    setSnackbarMessage("Learn more about our services!");
+    setOpenSnackbar(true);
+  };
+
+  const baseUrl = `${window.location.origin}`;
   return (
     <div>
       <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Real Estate
-          </Typography>
-          <WalletActionButton />
-        </Toolbar>
+        <Container maxWidth="xl">
+          <Toolbar>
+            <Avatar
+              alt="XRealEstate Logo"
+              src={`${baseUrl}/XRealEstate_192.jpg`}
+              sx={{ width: 40, height: 40, marginRight: 2 }}
+            />
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="#app-bar-with-responsive-menu"
+              sx={{
+                flexGrow: 1,
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              XRealEstate
+            </Typography>
+            <WalletActionButton />
+          </Toolbar>
+        </Container>
       </AppBar>
 
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Paper elevation={3} sx={{ padding: 3 }}>
-              <Typography variant="h4" gutterBottom>
-                Bienvenido a Real Estate Blockchain
-              </Typography>
-              <Typography variant="body1">
-                Explora la plataforma que te permite gestionar propiedades inmobiliarias utilizando la tecnología blockchain.
-                Con nuestra plataforma, puedes verificar identidades digitales, registrar activos inmobiliarios y gestionar contratos de forma segura y transparente.
-              </Typography>
-              <Button variant="contained" color="primary" sx={{ mt: 2 }}>
-                Descubre más
-              </Button>
-            </Paper>
-          </Grid>
+        {/* Slider Section */}
+        <Carousel
+          showArrows={true}
+          infiniteLoop={true}
+          autoPlay
+          interval={3000}
+        >
+          <div>
+            <img
+              src={`${baseUrl}/assets/RealEstateAsset.jpeg`}
+              alt="Tokenization of Real Estate"
+            />
+            <p className="legend">Tokenization of Real Estate</p>
+          </div>
+          <div>
+            <img
+              src={`${baseUrl}/assets/SecureDigitalIdentity.jpeg`}
+              alt="Secure Digital Identity"
+            />
+            <p className="legend">Secure Digital Identity</p>
+          </div>
+          <div>
+            <img src={`${baseUrl}/assets/Kyc.jpeg`} alt="KYC Compliance" />
+            <p className="legend">KYC Compliance</p>
+          </div>
+        </Carousel>
 
-          {/* Sección 2: Información sobre contratos */}
-          <Grid item xs={12}>
+        {/* Information Section */}
+        <Grid2 container spacing={4} sx={{ mt: 4 }}>
+          <Grid2 component="div">
             <Paper elevation={3} sx={{ padding: 3 }}>
               <Typography variant="h4" gutterBottom>
-                Gestión de Contratos
+                Welcome to Real Estate Blockchain
               </Typography>
-              <Typography variant="body1">
-                Nuestra plataforma facilita la gestión de contratos en diferentes ramas, incluidos los contratos de migración, identidad digital y activos inmobiliarios.
+              <Typography variant="body1" paragraph>
+                Explore the platform that allows you to manage real estate
+                properties using blockchain technology. With our platform, you
+                can verify digital identities, register real estate assets, and
+                manage contracts securely and transparently.
+              </Typography>
+              {/* <Button
+                variant="contained"
+                color="primary"
+                onClick={handleLearnMoreClick}
+              >
+                Learn More
+              </Button> */}
+            </Paper>
+          </Grid2>
+
+          {/* Contracts Information Section */}
+          <Grid2 component="div">
+            <Paper elevation={3} sx={{ padding: 3 }}>
+              <Typography variant="h4" gutterBottom>
+                Contract Management
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Our platform facilitates the management of contracts across
+                various domains, including migration contracts, digital
+                identity, and real estate assets.
               </Typography>
               <ul>
-                <li>Migrations: (base58) TDoxmTzZZts9tuRQ9nTjxdNYAcPH368RHA</li>
-                <li>DigitalIdentity: (base58) TARU1xhmYe6YaEtEL6ePieQN1RHir64G4y</li>
-                <li>RealEstateToken: (base58) THVysASgtBi78LEiFKefCZrWyD9eF1fyeH</li>
-                <li>RealEstateAsset: (base58) TXDqbGMwwfvb5iwhrXvGjQwpaCcRGXnXNw</li>
-                <li>Market: (base58) TYyptmmn7fP8FkAmPT9QzLTjFTf3pxrbaq</li>
+                <li>
+                  Migrations:{" "}
+                  <strong>(base58) TESwu1FFLbGLNB6JranN42DdSnji6yU1R3</strong>
+                </li>
+                <li>
+                  DigitalIdentity:{" "}
+                  <strong>(base58) TLMsMxLtt3wrarUs9JHbSC7oNpdb4FdAGJ</strong>
+                </li>
+                <li>
+                  RealEstateToken:{" "}
+                  <strong>(base58) TCfs2yAR2U1yjK8TyH49zjzWkpGumMSqFr</strong>
+                </li>
+                <li>
+                  RealEstateAsset:{" "}
+                  <strong>(base58) TNPFgBB2hBXHZPbJvh9uUmqciZuEtrPtTM</strong>
+                </li>
+                <li>
+                  Market:{" "}
+                  <strong>(base58) TBPLWiaL3eyZS2v6rpdpTTij3ftffKMS1E</strong>
+                </li>
               </ul>
             </Paper>
-          </Grid>
+          </Grid2>
 
-          {/* Sección 3: Seguridad y Transparencia */}
-          <Grid item xs={12}>
+          {/* Security and Transparency Section */}
+          <Grid2 component="div">
             <Paper elevation={3} sx={{ padding: 3 }}>
               <Typography variant="h4" gutterBottom>
-                Seguridad y Transparencia
+                Security and Transparency
               </Typography>
-              <Typography variant="body1">
-                Al utilizar blockchain, garantizamos que cada transacción sea transparente y esté asegurada criptográficamente. Esto protege tus activos y asegura que solo las partes autorizadas puedan acceder a los datos.
+              <Typography variant="body1" paragraph>
+                By utilizing blockchain, we ensure that every transaction is
+                transparent and cryptographically secured. This protects your
+                assets and ensures that only authorized parties can access the
+                data.
               </Typography>
-              <Button variant="contained" color="secondary" sx={{ mt: 2 }}>
-                Aprende más sobre nuestra seguridad
-              </Button>
+              {/* <Button variant="contained" color="secondary" sx={{ mt: 2 }}>
+                Learn more about our security
+              </Button> */}
             </Paper>
-          </Grid>
+          </Grid2>
 
-          {/* Sección 4: Participa en nuestra plataforma */}
-          <Grid item xs={12}>
+          {/* Join Our Platform Section */}
+          <Grid2 component="div">
             <Paper elevation={3} sx={{ padding: 3 }}>
               <Typography variant="h4" gutterBottom>
-                Únete a nuestra plataforma
+                Join Our Platform
               </Typography>
-              <Typography variant="body1">
-                Conéctate con tu cartera digital y comienza a gestionar tus propiedades de forma segura con la tecnología blockchain. Nuestra plataforma es compatible con múltiples wallets, incluyendo TronLink y WalletConnect.
+              <Typography variant="body1" paragraph>
+                Connect with your digital wallet and start managing your
+                properties securely using blockchain technology. Our platform
+                supports multiple wallets, including TronLink and WalletConnect.
               </Typography>
               <WalletActionButton />
             </Paper>
-          </Grid>
-        </Grid>
+          </Grid2>
+        </Grid2>
       </Container>
-        {/* <Link to="/landing" style={{ textDecoration: 'none' }}>
-                <Button variant="contained" color="primary" sx={{ mt: 2 }}>
-                  Ir a Landing
-                </Button>
-        </Link> */}
+
+      {/* Snackbar for notifications */}
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          onClose={handleSnackbarClose}
+          severity="info"
+          sx={{ width: "100%" }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   );
-};
+}

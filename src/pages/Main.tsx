@@ -76,7 +76,7 @@ function PageContent({ pathname }: { pathname: string }) {
       case "/real-estate-asset":
           return <RealEstateAsset />;
       default:
-        return this;
+        return <Dashboard />;
     }
   };
 

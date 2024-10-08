@@ -1,3 +1,4 @@
+import TronWeb from 'tronweb';
 import DigitalIdentityJson from './../contracts/DigitalIdentity.json';
 const contractAddress = 'TLMsMxLtt3wrarUs9JHbSC7oNpdb4FdAGJ';
 
@@ -33,8 +34,15 @@ export const digitalIdentityService = {
   },
 
   owner: async () => {
-    const contract = await digitalIdentityService.getContract();
-    return await contract.owner().call();
+    try {
+      const contract = await digitalIdentityService.getContract();
+      const ownerHex = await contract.methods.owner().call();
+      const ownerAddress = TronWeb.address.fromHex(ownerHex);
+      return ownerAddress;
+    } catch (error) {
+      console.error('Error fetching owner:', error);
+      return '';
+    }
   },
 
   changeEntity: async (newIdentifier) => {

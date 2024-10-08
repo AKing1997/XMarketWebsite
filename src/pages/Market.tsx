@@ -17,20 +17,25 @@ import {
 
 const Market: React.FC = () => {
   const { connected, address } = useWalletContext(); // Contexto de la billetera
-  const [listings, setListings] = useState([]);
-  const [soldAssets, setSoldAssets] = useState([]);
-  const [newAsset, setNewAsset] = useState({ tokenId: "", price: "" });
-  const [error, setError] = useState("");
-  const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [snackbarSeverity, setSnackbarSeverity] = useState<"success" | "error">("success");
-  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [listings, setListings] = useState([]); // Lista de activos
+  const [soldAssets, setSoldAssets] = useState([]); // Activos vendidos
+  const [newAsset, setNewAsset] = useState({ tokenId: "", price: "" }); // Nuevo activo
+  const [error, setError] = useState(""); // Mensaje de error
+  const [snackbarMessage, setSnackbarMessage] = useState(""); // Mensaje para Snackbar
+  const [snackbarSeverity, setSnackbarSeverity] = useState<"success" | "error">("success"); // Severidad del Snackbar
+  const [openSnackbar, setOpenSnackbar] = useState(false); // Estado del Snackbar
   const [tabValue, setTabValue] = useState(0); // Controla el Tab activo
 
   useEffect(() => {
     const fetchListings = async () => {
       try {
         const fetchedListings = await marketService.getAllListings();
-        setListings(fetchedListings);
+        // Convierte los campos BigNumber a números o cadenas
+        setListings(fetchedListings.map(listing => ({
+          ...listing,
+          price: listing.price.toString(), // Convierte el precio a una cadena
+          tokenId: listing.tokenId.toString(), // Convierte el tokenId a una cadena
+        })));
       } catch (err: any) {
         setError(err.message);
       }
@@ -39,7 +44,12 @@ const Market: React.FC = () => {
     const fetchSoldAssets = async () => {
       try {
         const fetchedSoldAssets = await marketService.getAllSoldAssets();
-        setSoldAssets(fetchedSoldAssets);
+        // Convierte los campos BigNumber a números o cadenas
+        setSoldAssets(fetchedSoldAssets.map(asset => ({
+          ...asset,
+          price: asset.price.toString(), // Convierte el precio a una cadena
+          tokenId: asset.tokenId.toString(), // Convierte el tokenId a una cadena
+        })));
       } catch (err: any) {
         setError(err.message);
       }
@@ -58,7 +68,12 @@ const Market: React.FC = () => {
       setSnackbarSeverity("success");
       setOpenSnackbar(true);
       const fetchedListings = await marketService.getAllListings();
-      setListings(fetchedListings);
+      // Convierte los campos BigNumber a números o cadenas
+      setListings(fetchedListings.map(listing => ({
+        ...listing,
+        price: listing.price.toString(), // Convierte el precio a una cadena
+        tokenId: listing.tokenId.toString(), // Convierte el tokenId a una cadena
+      })));
     } catch (err: any) {
       setError(err.message);
       setSnackbarMessage("Failed to buy asset.");
@@ -82,7 +97,12 @@ const Market: React.FC = () => {
       setSnackbarSeverity("success");
       setOpenSnackbar(true);
       const fetchedListings = await marketService.getAllListings();
-      setListings(fetchedListings);
+      // Convierte los campos BigNumber a números o cadenas
+      setListings(fetchedListings.map(listing => ({
+        ...listing,
+        price: listing.price.toString(), // Convierte el precio a una cadena
+        tokenId: listing.tokenId.toString(), // Convierte el tokenId a una cadena
+      })));
       setNewAsset({ tokenId: "", price: "" }); // Limpiar campos
     } catch (err: any) {
       setError(err.message);
@@ -102,106 +122,78 @@ const Market: React.FC = () => {
 
   return (
     <Box sx={{ padding: 3 }}>
-      <Typography variant="h4" gutterBottom>
-        Real Estate Market
+      <Typography variant="h4" sx={{ marginBottom: 2 }}>
+        Market
       </Typography>
-      {error && <Typography color="error">{error}</Typography>}
-
-      {/* Tabs for different sections */}
-      <Tabs value={tabValue} onChange={handleTabChange} aria-label="market tabs">
-        <Tab label="All Assets" />
-        <Tab label="List Asset" />
+      <Tabs value={tabValue} onChange={handleTabChange}>
+        <Tab label="Listings" />
         <Tab label="Sold Assets" />
+        <Tab label="List Asset" />
       </Tabs>
-
-      {/* Tab Panels */}
       {tabValue === 0 && (
-        <Box mt={3}>
-          <Grid container spacing={3}>
-            {listings.map((listing: any, index) => (
-              <Grid item xs={12} sm={6} key={index}> {/* Cambiado 'size' por 'item' y 'xs', 'sm' */}
-                <Card>
-                  <CardContent>
-                    <Typography variant="h6">Token ID: {listing.tokenId}</Typography>
-                    <Typography variant="body1">Seller: {listing.seller}</Typography>
-                    <Typography variant="body1">Price: {listing.price} TRX</Typography>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      onClick={() => handleBuyAsset(index)}
-                      sx={{ marginTop: 2 }}
-                    >
-                      Buy Asset
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+        <Grid container spacing={2} sx={{ marginTop: 2 }}>
+          {listings.map((listing, index) => (
+            <Grid item xs={12} sm={6} key={index}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6">Token ID: {listing.tokenId}</Typography>
+                  <Typography variant="body1">Seller: {listing.seller}</Typography>
+                  <Typography variant="body1">Price: {listing.price}</Typography>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => handleBuyAsset(index)}
+                    sx={{ marginTop: 2 }}
+                  >
+                    Buy Asset
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       )}
-
       {tabValue === 1 && (
-        <Box mt={3}>
-          <Typography variant="h6" gutterBottom>
-            List a New Asset
-          </Typography>
+        <Grid container spacing={2} sx={{ marginTop: 2 }}>
+          {soldAssets.map((asset, index) => (
+            <Grid item xs={12} sm={6} key={index}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6">Token ID: {asset.tokenId}</Typography>
+                  <Typography variant="body1">Buyer: {asset.buyer}</Typography>
+                  <Typography variant="body1">Price: {asset.price}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      )}
+      {tabValue === 2 && (
+        <Box sx={{ marginTop: 2 }}>
+          <Typography variant="h6">List Asset</Typography>
           <TextField
             label="Token ID"
             value={newAsset.tokenId}
-            onChange={(e) => setNewAsset({ ...newAsset, tokenId: e.target.value })}
-            fullWidth
-            margin="normal"
+            onChange={e => setNewAsset({ ...newAsset, tokenId: e.target.value })}
+            sx={{ width: "100%", marginBottom: 2 }}
           />
           <TextField
-            label="Price (in TRX)"
+            label="Price"
             value={newAsset.price}
-            onChange={(e) => setNewAsset({ ...newAsset, price: e.target.value })}
-            fullWidth
-            margin="normal"
+            onChange={e => setNewAsset({ ...newAsset, price: e.target.value })}
+            sx={{ width: "100%", marginBottom: 2 }}
           />
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleListAsset}
-            sx={{ marginTop: 2 }}
-          >
+          <Button variant="contained" color="primary" onClick={handleListAsset}>
             List Asset
           </Button>
         </Box>
       )}
-
-      {tabValue === 2 && (
-        <Box mt={3}>
-          <Typography variant="h6" gutterBottom>
-            Sold Assets
-          </Typography>
-          <Grid container spacing={3}>
-            {soldAssets.map((asset: any, index) => (
-              <Grid item xs={12} sm={6} key={index}> {/* Cambiado 'size' por 'item' y 'xs', 'sm' */}
-                <Card>
-                  <CardContent>
-                    <Typography variant="h6">Token ID: {asset.tokenId}</Typography>
-                    <Typography variant="body1">Buyer: {asset.buyer}</Typography>
-                    <Typography variant="body1">Price: {asset.price} TRX</Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      )}
-
-      {/* Snackbar para notificaciones */}
       <Snackbar
         open={openSnackbar}
         autoHideDuration={6000}
         onClose={handleCloseSnackbar}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
-        <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity} sx={{ width: "100%" }}>
-          {snackbarMessage}
-        </Alert>
+        <Alert severity={snackbarSeverity}>{snackbarMessage}</Alert>
       </Snackbar>
     </Box>
   );

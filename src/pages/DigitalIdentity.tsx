@@ -7,7 +7,9 @@ import TabPanel from '@mui/lab/TabPanel';
 import { useEffect, useState } from 'react';
 import { useWalletContext } from '../components/context/WalletContext';
 import { digitalIdentityService } from '../services/digitalIdentityService';
-import { Button, TextField } from '@mui/material';
+import { Button, TextField, Snackbar, Alert, Typography, Chip, Stack } from '@mui/material';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 export default function DigitalIdentity() {
   const [value, setValue] = React.useState('1');
@@ -16,8 +18,13 @@ export default function DigitalIdentity() {
   const [verificationStatus, setVerificationStatus] = useState(null);
   const [owner, setOwner] = useState('');
   const [isOwner, setIsOwner] = useState(false);
-  const [unverifiedEntities, setUnverifiedEntities] = useState([]); // Lista de entidades no verificadas
-  const { address, connected } = useWalletContext(); // Obtener el contexto de la billetera
+  const [unverifiedEntities, setUnverifiedEntities] = useState([]);
+  const { address, connected } = useWalletContext();
+
+  // Estado para Snackbar
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success');
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
@@ -25,22 +32,28 @@ export default function DigitalIdentity() {
 
   const handleRequestVerification = async () => {
     if (!connected) {
-      alert('Please connect your wallet!');
+      setSnackbarMessage('Please connect your wallet!');
+      setSnackbarSeverity('error');
+      setOpenSnackbar(true);
       return;
     }
 
     try {
       await digitalIdentityService.requestVerification(identifier);
-      alert('Verification request sent!');
+      setSnackbarMessage('Verification request sent!');
+      setSnackbarSeverity('success');
+      setOpenSnackbar(true);
     } catch (error) {
       console.error('Error requesting verification:', error);
-      alert('Failed to request verification');
+      setSnackbarMessage('Failed to request verification');
+      setSnackbarSeverity('error');
+      setOpenSnackbar(true);
     }
   };
 
-  const checkVerificationStatus = async () => {
+  const checkVerificationStatus = async (address) => {
     try {
-      const status = await digitalIdentityService.isVerified(identifier);
+      const status = await digitalIdentityService.isVerified(address);
       setVerificationStatus(status);
       setIsVerified(status);
     } catch (error) {
@@ -76,24 +89,31 @@ export default function DigitalIdentity() {
 
   const handleVerifyEntity = async () => {
     if (!connected) {
-      alert('Please connect your wallet!');
+      setSnackbarMessage('Please connect your wallet!');
+      setSnackbarSeverity('error');
+      setOpenSnackbar(true);
       return;
     }
 
     try {
       const result = await digitalIdentityService.verifyEntity(identifier);
       console.log('Entity verified:', result);
-      alert('Entity verified successfully!');
+      setSnackbarMessage('Entity verified successfully!');
+      setSnackbarSeverity('success');
+      setOpenSnackbar(true);
       fetchUnverifiedEntities();
     } catch (error) {
       console.error('Error verifying entity:', error);
-      alert('Failed to verify entity');
+      setSnackbarMessage('Failed to verify entity');
+      setSnackbarSeverity('error');
+      setOpenSnackbar(true);
     }
   };
 
   useEffect(() => {
+    checkVerificationStatus(address);
     if (identifier) {
-      checkVerificationStatus();
+      checkVerificationStatus(identifier);
     }
   }, [identifier]);
 
@@ -101,21 +121,41 @@ export default function DigitalIdentity() {
     checkOwnerStatus();
   }, []);
 
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
+
   return (
-    <Box sx={{ width: '100%', typography: 'body1' }}>
+    <Box sx={{ width: '100%', typography: 'body1' }}> 
       {verificationStatus !== null && (
-            <p>
-              Verification status for {identifier}: {isVerified ? 'Verified' : 'Not Verified'}
-            </p>
-          )}
+        <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
+          <Stack direction="row" spacing={1} sx={{ marginLeft: 2 }}>
+            {isVerified ? (
+              <Chip
+                label="Verified"
+                color="success"
+                icon={<CheckCircleIcon />}
+              />
+            ) : (
+              <Chip
+                label="Not Verified"
+                color="error"
+                icon={<CancelIcon />}
+              />
+            )}
+          </Stack>
+        </Box>
+      )}
+
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
             <Tab label="Request Digital Identity" value="1" />
             {isOwner && <Tab label="Verify Digital Identity" value="2" />}
+            {isOwner && <Tab label="Unverified Entities" value="3" />} {/* Nuevo Tab */}
           </TabList>
         </Box>
-        
+
         <TabPanel value="1">
           <TextField
             id="outlined-identifier"
@@ -134,25 +174,57 @@ export default function DigitalIdentity() {
             Request Verification
           </Button>
         </TabPanel>
-        {isOwner && (<TabPanel value="2">
-          <TextField
-            id="outlined-identifier"
-            label="Identifier"
-            variant="outlined"
-            value={identifier}
-            onChange={(e) => setIdentifier(e.target.value)}
-            fullWidth
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleVerifyEntity}
-            style={{ marginTop: '10px' }}
-          >
-            Verify Identity
-          </Button>
-        </TabPanel>)}
+
+        {isOwner && (
+          <TabPanel value="2">
+            <TextField
+              id="outlined-identifier"
+              label="Identifier"
+              variant="outlined"
+              value={identifier}
+              onChange={(e) => setIdentifier(e.target.value)}
+              fullWidth
+            />
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleVerifyEntity}
+              style={{ marginTop: '10px' }}
+            >
+              Verify Identity
+            </Button>
+          </TabPanel>
+        )}
+
+        {isOwner && (
+          <TabPanel value="3">
+            <Typography variant="h6" gutterBottom>
+              Unverified Entities
+            </Typography>
+            {unverifiedEntities.length === 0 ? (
+              <Typography>No unverified entities found.</Typography>
+            ) : (
+              <ul>
+                {unverifiedEntities.map((entity, index) => (
+                  <li key={index}>{entity.identifier}</li>
+                ))}
+              </ul>
+            )}
+          </TabPanel>
+        )}
       </TabContext>
+
+      {/* Snackbar para notificaciones */}
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity} sx={{ width: '100%' }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }

@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { tokenService } from "../services/tokenService";
 import { useWalletContext } from "../components/context/WalletContext";
-import { Box, Button, TextField, Typography, Paper } from "@mui/material";
+import { Box, Button, TextField, Typography, Paper, Snackbar, Alert } from "@mui/material";
 
 export const RealEstateToken = () => {
   const { connected, address } = useWalletContext();
@@ -15,27 +15,32 @@ export const RealEstateToken = () => {
   const [recipient, setRecipient] = useState('');
   const [amount, setAmount] = useState('');
 
+  // Estado para Snackbar
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success');
+
   useEffect(() => {
     const loadAccount = async () => {
-        if (connected) {
-            setAccount(address);
-            await updateBalance(address);
-            await updateTotalSupply();
-            await updateTokenDetails();
-        }
+      if (connected) {
+        setAccount(address);
+        await updateBalance(address);
+        await updateTotalSupply();
+        await updateTokenDetails();
+      }
     };
-    
+
     loadAccount();
-  }, [connected, address]); // Dependencias para volver a ejecutar el efecto al cambiar la dirección
+  }, [connected, address]);
 
   const updateBalance = async (address) => {
     const balance = await tokenService.balanceOf(address);
-    setBalance(balance.toString()); // Convertir BigNumber a string
+    setBalance(balance.toString());
   };
 
   const updateTotalSupply = async () => {
     const supply = await tokenService.totalSupply();
-    setTotalSupply(supply.toString()); // Convertir BigNumber a string
+    setTotalSupply(supply.toString());
   };
 
   const updateTokenDetails = async () => {
@@ -50,12 +55,20 @@ export const RealEstateToken = () => {
   const handleTransfer = async () => {
     try {
       await tokenService.transfer(recipient, amount);
-      alert('Transfer successful');
-      await updateBalance(account); // Actualizar el balance después de la transferencia
+      setSnackbarMessage('Transfer successful');
+      setSnackbarSeverity('success');
+      setOpenSnackbar(true);
+      await updateBalance(account);
     } catch (error) {
       console.error('Transfer failed:', error);
-      alert('Transfer failed');
+      setSnackbarMessage('Transfer failed');
+      setSnackbarSeverity('error');
+      setOpenSnackbar(true);
     }
+  };
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
   };
 
   return (
@@ -99,6 +112,20 @@ export const RealEstateToken = () => {
           Transfer
         </Button>
       </Paper>
+
+      {/* Snackbar para notificaciones */}
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity} sx={{ width: '100%' }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 };
+
+export default RealEstateToken;
