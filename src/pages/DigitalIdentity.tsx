@@ -7,6 +7,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import { useEffect, useState } from 'react';
 import { useWalletContext } from '../components/context/WalletContext';
 import { digitalIdentityService } from '../services/digitalIdentityService';
+import { Button, TextField } from '@mui/material';
 
 export default function DigitalIdentity() {
   const [value, setValue] = React.useState('1');
@@ -55,33 +56,32 @@ export default function DigitalIdentity() {
       setIsOwner(currentAddress === currentOwner);
 
       if (currentAddress === currentOwner) {
-        fetchUnverifiedEntities(); // Solo el propietario puede ver esta lista
+        fetchUnverifiedEntities();
       }
     } catch (error) {
       console.error('Error fetching owner:', error);
     }
   };
 
-  // Obtener la lista de entidades no verificadas
   const fetchUnverifiedEntities = async () => {
     try {
       const contract = await digitalIdentityService.getContract();
       const entities = await contract.entities().call();
-      const unverified = entities.filter((entity) => !entity.isVerified); // Filtra los no verificados
+      const unverified = entities.filter((entity) => !entity.isVerified);
       setUnverifiedEntities(unverified);
     } catch (error) {
       console.error('Error fetching entities:', error);
     }
   };
 
-  const handleVerifyEntity = async (entityAddress: string) => {
+  const handleVerifyEntity = async () => {
     if (!connected) {
       alert('Please connect your wallet!');
       return;
     }
 
     try {
-      const result = await digitalIdentityService.verifyEntity(entityAddress);
+      const result = await digitalIdentityService.verifyEntity(identifier);
       console.log('Entity verified:', result);
       alert('Entity verified successfully!');
       fetchUnverifiedEntities();
@@ -103,59 +103,55 @@ export default function DigitalIdentity() {
 
   return (
     <Box sx={{ width: '100%', typography: 'body1' }}>
-      <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Request Digital Identity" value="1" />
-            <Tab label="Verify Digital Identity" value="2" />
-          </TabList>
-        </Box>
-        
-        {/* Pestaña de Solicitud de Verificación */}
-        <TabPanel value="1">
-          <h2>Request Verification</h2>
-          <input
-            type="text"
-            placeholder="Enter identifier"
-            value={identifier}
-            onChange={(e) => setIdentifier(e.target.value)}
-          />
-          <button onClick={handleRequestVerification}>Request Verification</button>
-          {verificationStatus !== null && (
+      {verificationStatus !== null && (
             <p>
               Verification status for {identifier}: {isVerified ? 'Verified' : 'Not Verified'}
             </p>
           )}
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example">
+            <Tab label="Request Digital Identity" value="1" />
+            {isOwner && <Tab label="Verify Digital Identity" value="2" />}
+          </TabList>
+        </Box>
+        
+        <TabPanel value="1">
+          <TextField
+            id="outlined-identifier"
+            label="Identifier"
+            variant="outlined"
+            value={identifier}
+            onChange={(e) => setIdentifier(e.target.value)}
+            fullWidth
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleRequestVerification}
+            style={{ marginTop: '10px' }}
+          >
+            Request Verification
+          </Button>
         </TabPanel>
-        <TabPanel value="2">
-          {isOwner && <p className="owner-badge">You are the owner</p>}
-          {unverifiedEntities.length > 0 ? (
-            <table className="entity-table">
-              <thead>
-                <tr>
-                  <th>Address</th>
-                  <th>Identifier</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {unverifiedEntities.map((entity, index) => (
-                  <tr key={index}>
-                    <td>{entity.entityAddress}</td>
-                    <td>{entity.identifier}</td>
-                    <td>
-                      <button onClick={() => handleVerifyEntity(entity.entityAddress)}>
-                        Verify
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          ) : (
-            <p>All entities are verified.</p>
-          )}
-        </TabPanel>
+        {isOwner && (<TabPanel value="2">
+          <TextField
+            id="outlined-identifier"
+            label="Identifier"
+            variant="outlined"
+            value={identifier}
+            onChange={(e) => setIdentifier(e.target.value)}
+            fullWidth
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleVerifyEntity}
+            style={{ marginTop: '10px' }}
+          >
+            Verify Identity
+          </Button>
+        </TabPanel>)}
       </TabContext>
     </Box>
   );

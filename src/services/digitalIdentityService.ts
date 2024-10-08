@@ -1,147 +1,5 @@
-const contractAddress = 'TARU1xhmYe6YaEtEL6ePieQN1RHir64G4y';
-
-const contractABI = [
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "entity",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "identifier",
-        "type": "string"
-      }
-    ],
-    "name": "EntityVerified",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "previousOwner",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
-      }
-    ],
-    "name": "OwnershipTransferred",
-    "type": "event"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "entities",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "isVerified",
-        "type": "bool"
-      },
-      {
-        "internalType": "string",
-        "name": "identifier",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "entityAddress",
-        "type": "address"
-      }
-    ],
-    "name": "isVerified",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "owner",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "renounceOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "identifier",
-        "type": "string"
-      }
-    ],
-    "name": "requestVerification",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
-      }
-    ],
-    "name": "transferOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "entityAddress",
-        "type": "address"
-      }
-    ],
-    "name": "verifyEntity",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  }
-];
+import DigitalIdentityJson from './../contracts/DigitalIdentity.json';
+const contractAddress = 'TLMsMxLtt3wrarUs9JHbSC7oNpdb4FdAGJ';
 
 export const digitalIdentityService = {
   getContract: async () => {
@@ -150,21 +8,20 @@ export const digitalIdentityService = {
       throw new Error('TronLink wallet is not connected. Please install or unlock TronLink.');
     }
   
-    // Retornar el contrato
-    return await tronWeb.contract(contractABI, contractAddress);
+    return await tronWeb.contract(DigitalIdentityJson.abi, contractAddress);
   },
 
   requestVerification: async (identifier) => {
     const contract = await digitalIdentityService.getContract();
     return await contract.requestVerification(identifier).send();
   },
-  
+
   isVerified: async (address) => {
     const contract = await digitalIdentityService.getContract();
     return await contract.isVerified(address).call();
   },
 
-  verifyEntity: async (entityAddress: string) => {
+  verifyEntity: async (entityAddress) => {
     try {
       const contract = await digitalIdentityService.getContract();
       const tx = await contract.verifyEntity(entityAddress).send();
@@ -178,5 +35,15 @@ export const digitalIdentityService = {
   owner: async () => {
     const contract = await digitalIdentityService.getContract();
     return await contract.owner().call();
-  }
+  },
+
+  changeEntity: async (newIdentifier) => {
+    const contract = await digitalIdentityService.getContract();
+    return await contract.changeEntity(newIdentifier).send();
+  },
+
+  removeEntity: async () => {
+    const contract = await digitalIdentityService.getContract();
+    return await contract.removeEntity().send();
+  },
 };

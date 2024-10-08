@@ -1,14 +1,21 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import { createTheme } from "@mui/material/styles";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { AppProvider } from "@toolpad/core/AppProvider";
 import { DashboardLayout } from "@toolpad/core/DashboardLayout";
 import type { Router, Navigation } from "@toolpad/core";
 import { WalletActionButton } from "@tronweb3/tronwallet-adapter-react-ui";
-import { Market } from "./Market";
+import Market from "./Market";
 import DigitalIdentity from "./DigitalIdentity";
+import { RealEstateToken } from "./RealEstateToken";
+import RealEstateAsset from "./RealEstateAsset";
+import Dashboard from "./Dashboard";
+
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import FingerprintIcon from '@mui/icons-material/Fingerprint';
+import TokenIcon from '@mui/icons-material/MonetizationOn'; 
+import BusinessIcon from '@mui/icons-material/Business';
 
 const NAVIGATION: Navigation = [
   {
@@ -19,14 +26,25 @@ const NAVIGATION: Navigation = [
   {
     segment: "market",
     title: "Market",
-    icon: <ShoppingCartIcon />,
+    icon: <StorefrontIcon />,
   },
   {
     segment: "digital-identity",
     title: "Digital Identity",
-    icon: <ShoppingCartIcon />,
+    icon: <FingerprintIcon />,
+  },
+  {
+    segment: "real-estate-token",
+    title: "Real Estate Token",
+    icon: <TokenIcon  />,
+  },
+  {
+    segment: "real-estate-asset",
+    title: "Real Estate Asset",
+    icon: <BusinessIcon />,
   },
 ];
+
 
 const deafultTheme = createTheme({
   cssVariables: {
@@ -47,10 +65,16 @@ const deafultTheme = createTheme({
 function PageContent({ pathname }: { pathname: string }) {
   const renderContent = () => {
     switch (pathname) {
+      case "/dashboard":
+        return <Dashboard />;
       case "/digital-identity":
         return <DigitalIdentity />;
       case "/market":
         return <Market />;
+      case "/real-estate-token":
+        return <RealEstateToken />;
+      case "/real-estate-asset":
+          return <RealEstateAsset />;
       default:
         return this;
     }
