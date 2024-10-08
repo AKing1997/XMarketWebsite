@@ -1,46 +1,97 @@
-# Getting Started with Create React App
+# XRealEstate DApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**XRealEstate** is a decentralized application (DApp) designed for the tokenization of real-world assets, specifically real estate properties. The platform integrates a **DigitalIdentity** system for user verification and token requests, ensuring that only verified users can buy, sell, or create Real Estate Tokens. These tokens represent ownership or partial ownership of real estate assets, facilitated through blockchain technology.
 
-## Available Scripts
+## Main Features
 
-In the project directory, you can run:
+- **Real-World Asset Tokenization as NFTs**: Real estate properties are tokenized as NFTs (Non-Fungible Tokens), representing digital ownership of physical assets. Users can create, buy, and sell these assets on the platform.
+- **DigitalIdentity for Verification**: To ensure secure and legitimate transactions, all users must verify their identity through the **DigitalIdentity** system. Only verified users can interact with the platform, including creating, buying, or selling real estate assets.
+- **Real Estate Marketplace**: The platform includes a marketplace where users can list tokenized real estate assets (as NFTs) for sale, or buy available assets from other users.
+- **Secure Transactions**: The use of blockchain technology ensures secure, transparent, and tamper-proof transactions.
+- **Tron Wallet Integration**: Uses TronWeb to connect Tron wallets, enabling transactions with TRX cryptocurrency for the buying and selling of real estate assets.
+  
+## Technologies Used
 
-### `npm start`
+This project utilizes several key dependencies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **React**: The main library for building the user interface.
+- **Material UI (MUI)**: For UI components and visual styling.
+- **TronWeb**: To integrate with the Tron blockchain and handle wallet operations.
+- **Chart.js**: For interactive charts and data visualization.
+- **React Router**: For managing routes within the application.
+- **TypeScript**: To enable static typing and ensure code robustness.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+Before starting, make sure you have the following installed:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Node.js** (v14 or higher)
+- **npm** or **yarn**
+- **Git**
 
-### `npm run build`
+## How to Run the Project Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Follow the steps below to run the project locally:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the project repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    git clone https://github.com/AKing1997/XRealEstateWebsite.git
+    ```
 
-### `npm run eject`
+2. Navigate into the project directory:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    ```bash
+    cd XRealEstateWebsite
+    ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Install the required dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ```bash
+    npm install
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Start the application:
 
-## Learn More
+    ```bash
+    npm start
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Open the application in your browser:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ```bash
+    http://localhost:5001
+    ```
+
+## Project Structure
+
+- **src/**: Contains the entire application source code.
+  - **components/**: Reusable React components.
+  - **pages/**: Main pages of the application.
+  - **services/**: Services like TronWeb connection and authentication logic.
+  - **styles/**: Global and custom styles.
+
+## Important Dependencies
+
+The project includes several important dependencies for its functionality, such as:
+
+- **@emotion/react** and **@emotion/styled**: For styling management in the application.
+- **@mui/icons-material** and **@mui/material**: For using Material UI icons and components.
+- **@tronweb3/tronwallet-adapter**: To connect Tron-based wallets, including support for Ledger and WalletConnect.
+- **Chart.js** and **react-chartjs-2**: For dynamic charts.
+- **React Router Dom**: For app navigation.
+- **tronweb**: A library for interacting with the Tron blockchain.
+
+## Contributions
+
+If you would like to contribute to this project, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/new-feature`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push your branch (`git push origin feature/new-feature`).
+5. Open a Pull Request.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
